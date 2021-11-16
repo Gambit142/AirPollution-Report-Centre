@@ -1,14 +1,10 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+// import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { fetchContinent } from '../redux/continent/Continent';
 
 const ContinentElement = () => {
-  const dispatch = useDispatch();
   const { continentReducer } = useSelector((state) => state);
-  useEffect(() => {
-    dispatch(fetchContinent());
-  }, []);
+
   return (
     <>
       <nav>

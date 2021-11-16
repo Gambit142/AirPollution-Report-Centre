@@ -1,5 +1,6 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { RiDeleteBack2Fill } from 'react-icons/ri';
 
 const CountryElement = () => {
   const [pollutionData, setPollutionData] = useState(null);
@@ -19,6 +20,15 @@ const CountryElement = () => {
   if (!pollutionData) return <h1>Loading...</h1>;
   return (
     <>
+      <nav>
+        <Link to="/">
+          <div>
+            <RiDeleteBack2Fill />
+            <span>Back</span>
+          </div>
+        </Link>
+        <span>Country: country</span>
+      </nav>
       <h1>{country}</h1>
       <img src={flag} alt={`${country}'s Flag`} />
       <div>
