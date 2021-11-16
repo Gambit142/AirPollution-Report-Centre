@@ -11,7 +11,12 @@ const ContinentElement = () => {
   }, []);
   return (
     <>
+      <nav>
+        <span>2021</span>
+        <span>Continent</span>
+      </nav>
       {continentReducer.map(({
+        updated,
         countryInfo: {
           _id: id, flag, lat, long,
         }, country,
@@ -26,8 +31,9 @@ const ContinentElement = () => {
           key={id}
         >
           <div>
-            <span>{country}</span>
+            <div>{country}</div>
             <img src={flag} alt={`${country}'s Flag`} />
+            <div>{Date(updated)}</div>
           </div>
         </Link>
       ))}
