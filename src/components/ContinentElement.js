@@ -11,8 +11,20 @@ const ContinentElement = () => {
   }, []);
   return (
     <>
-      {continentReducer.map(({ countryInfo: { _id: id, flag }, country }) => (
-        <Link to="/country" key={id}>
+      {continentReducer.map(({
+        countryInfo: {
+          _id: id, flag, lat, long,
+        }, country,
+      }) => (
+        <Link
+          to={{
+            pathname: `/country/${country}`,
+            state: {
+              long, lat, country, flag,
+            },
+          }}
+          key={id}
+        >
           <div>
             <span>{country}</span>
             <img src={flag} alt={`${country}'s Flag`} />
