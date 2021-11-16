@@ -5,7 +5,7 @@ const initialState = [];
 export const fetchContinent = () => async (dispatch) => {
   const response = await fetch(APIURL);
   const data = await response.json();
-  const continentData = data.filter((item) => item.countryInfo.continent === 'Africa');
+  const continentData = data.filter((item) => item.continent === 'Africa');
   dispatch({
     type: FETCH_CONTINENT,
     continentData,
