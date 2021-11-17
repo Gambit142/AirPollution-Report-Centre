@@ -44,11 +44,11 @@ const ContinentElement = () => {
                 },
               }}
             >
-              <div>
+              <div className="date">{(new Date(updated)).toDateString()}</div>
+              <div className="country-details">
                 <img className="flag" src={flag} alt={`${country}'s Flag`} />
-                <h2>{country}</h2>
-                <h2>{population}</h2>
-                <div>{(new Date(updated)).toDateString()}</div>
+                <h2 className="country-name">{country}</h2>
+                <h2 className="population">{population.toLocaleString()}</h2>
               </div>
             </Link>
           </div>
