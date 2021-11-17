@@ -1,38 +1,59 @@
 import { useSelector } from 'react-redux';
-// import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/Africa.png';
 
 const ContinentElement = () => {
   const { continentReducer } = useSelector((state) => state);
+  if (!continentReducer) return <h1>Loading</h1>;
+  const totalPopulation = !continentReducer ? 0 : continentReducer.reduce((total, item) => ({
+    population: total.population + item.population,
+  }), { population: 0 });
 
   return (
     <>
-      <nav>
+      <nav className="continent-navbar">
         <span>2021</span>
         <span>Continent</span>
       </nav>
-      {continentReducer.map(({
-        updated,
-        countryInfo: {
-          _id: id, flag, lat, long,
-        }, country,
-      }) => (
-        <Link
-          to={{
-            pathname: `/country/${country}`,
-            state: {
-              long, lat, country, flag,
-            },
-          }}
-          key={id}
-        >
-          <div>
-            <div>{country}</div>
-            <img src={flag} alt={`${country}'s Flag`} />
-            <div>{Date(updated)}</div>
+      <div className="headline">
+        <div>
+          <img className="africa" src={logo} alt="Map of Africa" />
+          <div className="african-details">
+            <span>Africa</span>
+            <span>
+              {`${continentReducer.length}
+               Countries`}
+            </span>
           </div>
-        </Link>
-      ))}
+        </div>
+      </div>
+      <div className="total-population">{`Total Population: ${totalPopulation.population.toLocaleString()}`}</div>
+      <section className="country-container">
+        {continentReducer.map(({
+          updated,
+          countryInfo: {
+            _id: id, flag, lat, long,
+          }, country, population,
+        }) => (
+          <div key={id} className="country-div">
+            <Link
+              to={{
+                pathname: `/country/${country}`,
+                state: {
+                  long, lat, country, flag,
+                },
+              }}
+            >
+              <div>
+                <img className="flag" src={flag} alt={`${country}'s Flag`} />
+                <h2>{country}</h2>
+                <h2>{population}</h2>
+                <div>{(new Date(updated)).toDateString()}</div>
+              </div>
+            </Link>
+          </div>
+        ))}
+      </section>
     </>
   );
 };
