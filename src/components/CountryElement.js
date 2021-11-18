@@ -20,17 +20,33 @@ const CountryElement = () => {
   if (!pollutionData) return <h1>Loading...</h1>;
   return (
     <>
-      <nav>
+      <nav className="country-navbar">
         <Link to="/">
-          <div>
+          <div className="back-arrow">
             <RiDeleteBack2Fill />
             <span>Back</span>
           </div>
         </Link>
-        <span>Country: country</span>
+        <span>Country&apos;s Details</span>
       </nav>
-      <h1>{country}</h1>
-      <img src={flag} alt={`${country}'s Flag`} />
+      <div className="headline">
+        <div>
+          <img src={flag} alt={`${country}'s Flag`} />
+          <div className="per-detail">
+            <span className="country-name">{country}</span>
+            <span>
+              Lat:
+              {' '}
+              {lat}
+            </span>
+            <span>
+              Long:
+              {' '}
+              {long}
+            </span>
+          </div>
+        </div>
+      </div>
       <div>
         <span>Carbon Monoxide:</span>
         {pollutionData.co}
@@ -83,8 +99,6 @@ const CountryElement = () => {
         <span>Ammonia (NH3):</span>
         {pollutionData.nh3}
       </div>
-      <div>{lat}</div>
-      <div>{long}</div>
     </>
   );
 };
