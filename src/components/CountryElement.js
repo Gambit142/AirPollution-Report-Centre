@@ -24,14 +24,13 @@ const CountryElement = () => {
         <Link to="/">
           <div className="back-arrow">
             <RiDeleteBack2Fill />
-            <span>Back</span>
           </div>
         </Link>
         <span>Country&apos;s Details</span>
       </nav>
-      <div className="headline">
+      <div className="headline country-headline">
         <div>
-          <img src={flag} alt={`${country}'s Flag`} />
+          <img className="country-image" src={flag} alt={`${country}'s Flag`} />
           <div className="per-detail">
             <span className="country-name">{country}</span>
             <span>
@@ -47,57 +46,57 @@ const CountryElement = () => {
           </div>
         </div>
       </div>
-      <div>
+      <div className="pollutant-div">
         <span>Carbon Monoxide:</span>
-        {pollutionData.co}
+        <span>{pollutionData.co}</span>
       </div>
-      <div>
+      <div className="pollutant-div">
         <span>Nitrogen Monoxide (NO):</span>
-        {pollutionData.no}
+        <span>{pollutionData.no}</span>
       </div>
-      <div>
+      <div className="pollutant-div">
         <span>
           Nitrogen Dioxide (NO
           <sub>2</sub>
           ):
         </span>
-        {pollutionData.no2}
+        <span>{pollutionData.no2}</span>
       </div>
-      <div>
+      <div className="pollutant-div">
         <span>
           Ozone (O
           <sub>3</sub>
           ):
         </span>
-        {pollutionData.o3}
+        <span>{pollutionData.o3}</span>
       </div>
-      <div>
+      <div className="pollutant-div">
         <span>
           Sulphur Dioxide (SO
           <sub>2</sub>
           ):
         </span>
-        {pollutionData.so2}
+        <span>{pollutionData.so2}</span>
       </div>
-      <div>
+      <div className="pollutant-div">
         <span>
           Particulate Matter 2.5(PM
           <sub>2.5</sub>
           ):
         </span>
-        {pollutionData.pm2_5}
+        <span>{pollutionData.pm2_5}</span>
       </div>
-      <div>
+      <div className="pollutant-div">
         <span>
           Particulate Matter 10 (PM
           <sub>10</sub>
           ):
         </span>
-        {pollutionData.pm10}
+        <span>{pollutionData.pm10}</span>
       </div>
-      <div>
+      <div className="pollutant-div">
         <span>Ammonia (NH3):</span>
-        {pollutionData.nh3}
+        <span>{pollutionData.nh3}</span>
       </div>
     </>
   );
