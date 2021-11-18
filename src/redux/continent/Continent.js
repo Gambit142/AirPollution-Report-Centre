@@ -1,10 +1,10 @@
+import fetchContinentApi from '../../components/fetchApi';
+
 const FETCH_CONTINENT = 'airpollution/continent/FETCH_CONTINENT';
-const APIURL = 'https://disease.sh/v3/covid-19/countries';
 const initialState = [];
 
 export const fetchContinent = () => async (dispatch) => {
-  const response = await fetch(APIURL);
-  const data = await response.json();
+  const data = await fetchContinentApi();
   const continentData = data.filter((item) => item.continent === 'Africa');
   dispatch({
     type: FETCH_CONTINENT,

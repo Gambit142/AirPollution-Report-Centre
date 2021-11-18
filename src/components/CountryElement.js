@@ -1,6 +1,7 @@
 import { useLocation, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { RiDeleteBack2Fill } from 'react-icons/ri';
+import { fetchPollutantApi } from './fetchApi';
 
 const CountryElement = () => {
   const [pollutionData, setPollutionData] = useState(null);
@@ -8,8 +9,7 @@ const CountryElement = () => {
   const APIKEY = '8fbadde895ad48d207382a06c22ef535';
   const APIURL = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${location.state.lat}&lon=${location.state.long}&appid=${APIKEY}`;
   useEffect(async () => {
-    const response = await fetch(APIURL);
-    const data = await response.json();
+    const data = await fetchPollutantApi(APIURL);
     setPollutionData(data.list[0].components);
   }, []);
 
