@@ -8,7 +8,8 @@
   background-color: #efdf80;
 }
 
-.continent-navbar {
+.continent-navbar,
+.country-navbar {
   display: flex;
   padding: 1.2rem;
   gap: 4.5rem;
@@ -35,29 +36,50 @@
   gap: 1.5rem;
 }
 
+.headline div img {
+  width: 12rem;
+}
+
 .africa {
   width: 11rem;
   opacity: 0.6;
 }
 
-.african-details {
+.african-details,
+.per-detail {
   flex-direction: column;
   margin-right: 1rem;
   gap: 0.5rem !important;
   align-self: center;
 }
 
-.african-details span {
+.african-details span,
+.per-detail span {
   font-size: 1.5rem;
   font-family: 'Lato', sans-serif;
   color: #000080;
 }
 
-.african-details span:first-child {
+.per-detail span {
+  font-size: 1.1rem;
+  font-weight: 600;
+} 
+
+.per-detail {
+  gap: 0 !important;
+}
+
+.african-details span:first-child,
+.per-detail span:first-child {
   align-self: center;
   font-size: 2rem;
   letter-spacing: 0.2rem;
   font-weight: 800;
+}
+
+.per-detail span:first-child {
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
 }
 
 .total-population {
@@ -78,16 +100,17 @@
 .flag {
   height: 7rem;
   width: 8rem;
+  align-self: flex-end;
 }
 
 .country-div {
   display: flex;
-  justify-content: center;
-  padding: 1rem 0;
+  justify-content: flex-end;
+  padding: 1rem 1.5rem 1rem 0;
 }
 
-.country-div:nth-child(4n),
-.country-div:nth-child(4n + 1) {
+.country-div:nth-child(4n + 2),
+.country-div:nth-child(4n + 3) {
   background-color: #e7d461;
 }
 
@@ -102,6 +125,7 @@
   align-self: flex-end;
   font-family: 'Lato', sans-serif;
   color: #000080;
+  text-align: end;
 }
 
 .country-name {
@@ -123,4 +147,34 @@
 
 .country-div a {
   text-decoration: none;
+}
+
+.country-navbar {
+  gap: 2rem;
+  align-items: center;
+  font-weight: 800;
+}
+
+.country-navbar span {
+  font-family: 'Lato', sans-serif;
+}
+
+.country-navbar a {
+  text-decoration: none;
+  color: #000080;
+}
+
+.back-arrow {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.back-arrow svg {
+  align-self: flex-end;
+}
+
+.back-arrow span {
+  font-size: 1.3rem;
+  font-weight: 800;
 }
