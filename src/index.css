@@ -5,7 +5,7 @@
 }
 
 #root {
-  background-color: #efdf80;
+  background-color: #64ae64;
 }
 
 .continent-navbar,
@@ -13,24 +13,25 @@
   display: flex;
   padding: 1.2rem;
   gap: 4.5rem;
-  background-color: #e7d461;
+  background-color: #089152;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1.5rem;
-  color: #222411;
+  color: #fff;
   font-weight: 600;
-}
-
-.continent-navbar span {
-  background-color: #e7d461;
 }
 
 .headline {
   padding: 2rem 0;
-  background-color: #b3a451;
+  /* background-color: #a6e35d; */
+  background-color: #42b13e;
 }
 
 .country-headline {
   padding: 2rem 1rem;
+}
+
+.country-headline div {
+  justify-content: space-around;
 }
 
 .headline div {
@@ -45,6 +46,8 @@
 
 .headline div .country-image {
   width: 10rem;
+  border-radius: 20px;
+  padding-left: 0;
 }
 
 .africa {
@@ -64,7 +67,7 @@
 .per-detail span {
   font-size: 1.5rem;
   font-family: 'Lato', sans-serif;
-  color: #000080;
+  color: #fbfb06;
 }
 
 .per-detail span {
@@ -90,16 +93,22 @@
   margin-bottom: 0.5rem;
   text-align: start;
   letter-spacing: 0.1rem;
+  align-self: flex-start;
 }
 
 .total-population {
-  color: #000080;
-  background-color: #e7d461;
+  color: #fff;
+  background-color: #089152a8;
   padding: 1rem;
   font-family: 'Lato', sans-serif;
   font-size: 1.1rem;
-  font-weight: 800;
+  font-weight: 600;
+  letter-spacing: 1px;
   box-shadow: 0 5px 8px rgba(0,0,128,.24);
+}
+
+.country-population {
+  font-size: 1.4rem;
 }
 
 .country-container {
@@ -111,6 +120,7 @@
   height: 7rem;
   width: 8rem;
   align-self: flex-end;
+  border-radius: 30px;
 }
 
 .country-div {
@@ -121,7 +131,7 @@
 
 .country-div:nth-child(4n + 2),
 .country-div:nth-child(4n + 3) {
-  background-color: #e7d461;
+  background-color: #439c43;
 }
 
 .country-details {
@@ -134,7 +144,9 @@
 .population {
   align-self: flex-end;
   font-family: 'Lato', sans-serif;
-  color: #302d05;
+  color: #fff;
+  letter-spacing: 2px;
+  font-size: 1.25rem;
   text-align: end;
 }
 
@@ -150,7 +162,7 @@
   font-family: 'Lato', sans-serif;
   font-size: 0.7rem;
   align-self: flex-end;
-  color: #302d05;
+  color: #000;
   text-align: end;
   margin-bottom: 1rem;
 }
@@ -179,7 +191,7 @@
   align-items: center;
   gap: 0.3rem;
   font-size: 1.6rem;
-  color: #222411;
+  color: #fff;
 }
 
 .back-arrow svg {
@@ -196,13 +208,13 @@
   padding: 2rem 1rem;
   font-family: 'Gill Sans', sans-serif;
   font-size: 1.2rem;
-  color: #620735;
+  color: #fff;
   font-weight: 700;
-  background-color: #efdf808f;
+  background-color: #64ac64cc;
 }
 
 .pollutant-div:nth-child(even) {
-  background-color: #b3a451;
+  background-color: #439c43c2;
 }
 
 .pollutant-div span:last-child {
@@ -210,7 +222,7 @@
 }
 
 .gas-details {
-  background: url('./assets/Air-Pollution.jpg') no-repeat;
+  background: url('./assets/pollutants-img.jpg') no-repeat;
   background-position: center;
   background-size: contain;
   background-attachment: fixed;
