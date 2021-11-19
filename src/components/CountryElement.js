@@ -46,57 +46,59 @@ const CountryElement = () => {
           </div>
         </div>
       </div>
-      <div className="pollutant-div">
-        <span>Carbon Monoxide:</span>
-        <span>{pollutionData.co}</span>
-      </div>
-      <div className="pollutant-div">
-        <span>Nitrogen Monoxide (NO):</span>
-        <span>{pollutionData.no}</span>
-      </div>
-      <div className="pollutant-div">
-        <span>
-          Nitrogen Dioxide (NO
-          <sub>2</sub>
-          ):
-        </span>
-        <span>{pollutionData.no2}</span>
-      </div>
-      <div className="pollutant-div">
-        <span>
-          Ozone (O
-          <sub>3</sub>
-          ):
-        </span>
-        <span>{pollutionData.o3}</span>
-      </div>
-      <div className="pollutant-div">
-        <span>
-          Sulphur Dioxide (SO
-          <sub>2</sub>
-          ):
-        </span>
-        <span>{pollutionData.so2}</span>
-      </div>
-      <div className="pollutant-div">
-        <span>
-          Particulate Matter 2.5(PM
-          <sub>2.5</sub>
-          ):
-        </span>
-        <span>{pollutionData.pm2_5}</span>
-      </div>
-      <div className="pollutant-div">
-        <span>
-          Particulate Matter 10 (PM
-          <sub>10</sub>
-          ):
-        </span>
-        <span>{pollutionData.pm10}</span>
-      </div>
-      <div className="pollutant-div">
-        <span>Ammonia (NH3):</span>
-        <span>{pollutionData.nh3}</span>
+      <div className="gas-details">
+        <div className="pollutant-div">
+          <span>Carbon Monoxide:</span>
+          <span>{pollutionData.co}</span>
+        </div>
+        <div className="pollutant-div">
+          <span>Nitrogen Monoxide (NO):</span>
+          <span>{pollutionData.no}</span>
+        </div>
+        <div className="pollutant-div">
+          <span>
+            Nitrogen Dioxide (NO
+            <sub>2</sub>
+            ):
+          </span>
+          <span>{pollutionData.no2}</span>
+        </div>
+        <div className="pollutant-div">
+          <span>
+            Ozone (O
+            <sub>3</sub>
+            ):
+          </span>
+          <span>{pollutionData.o3}</span>
+        </div>
+        <div className="pollutant-div">
+          <span>
+            Sulphur Dioxide (SO
+            <sub>2</sub>
+            ):
+          </span>
+          <span>{pollutionData.so2}</span>
+        </div>
+        <div className="pollutant-div">
+          <span>
+            Particulate Matter 2.5(PM
+            <sub>2.5</sub>
+            ):
+          </span>
+          <span>{pollutionData.pm2_5}</span>
+        </div>
+        <div className="pollutant-div">
+          <span>
+            Particulate Matter 10 (PM
+            <sub>10</sub>
+            ):
+          </span>
+          <span>{pollutionData.pm10}</span>
+        </div>
+        <div className="pollutant-div">
+          <span>Ammonia (NH3):</span>
+          <span>{pollutionData.nh3}</span>
+        </div>
       </div>
     </>
   );

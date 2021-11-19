@@ -1,6 +1,6 @@
 import fetchContinentApi from '../../components/fetchApi';
 
-const FETCH_CONTINENT = 'airpollution/continent/FETCH_CONTINENT';
+export const FETCH_CONTINENT = 'airpollution/continent/FETCH_CONTINENT';
 const initialState = [];
 
 export const fetchContinent = () => async (dispatch) => {

@@ -198,6 +198,7 @@
   font-size: 1.2rem;
   color: #620735;
   font-weight: 700;
+  background-color: #efdf808f;
 }
 
 .pollutant-div:nth-child(even) {
@@ -206,4 +207,11 @@
 
 .pollutant-div span:last-child {
   justify-self: end;
+}
+
+.gas-details {
+  background: url('./assets/Air-Pollution.jpg') no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-attachment: fixed;
 }
