@@ -4,6 +4,9 @@ import './index.css';
 import { Provider } from 'react-redux';
 import App from './App';
 import store from './redux/ConfigureStore';
+import { fetchContinent } from './redux/continent/Continent';
+
+store.dispatch(fetchContinent());
 
 ReactDOM.render(
   <Provider store={store}>
