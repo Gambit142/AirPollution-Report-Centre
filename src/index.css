@@ -237,7 +237,7 @@
   background-attachment: fixed;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 768px) {
   .continent-navbar {
     gap: 0;
     justify-content: space-between;
@@ -282,5 +282,30 @@
 
   .population {
     font-size: 1.2rem;
+  }
+
+  .headline div {
+    gap: 3rem;
+  }
+
+  .headline div .country-image {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+  }
+
+  .gas-details {
+    background: url('./assets/pollutant-desktop.jpg') no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-attachment: fixed;
+  }
+
+  .total-population {
+    padding-left: 3rem;
+  }
+
+  .pollutant-div {
+    padding: 2rem 3rem;
   }
 }
