@@ -1,23 +1,31 @@
 import { useLocation, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { RiDeleteBack2Fill } from 'react-icons/ri';
+import { FiSettings } from 'react-icons/fi';
 import { fetchPollutantApi } from './fetchApi';
 
 const CountryElement = () => {
   const [pollutionData, setPollutionData] = useState(null);
   const location = useLocation();
   const APIKEY = '8fbadde895ad48d207382a06c22ef535';
-  const APIURL = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${location.state.lat}&lon=${location.state.long}&appid=${APIKEY}`;
+  const APIURL = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${location.state?.lat}&lon=${location.state?.long}&appid=${APIKEY}`;
   useEffect(async () => {
     const data = await fetchPollutantApi(APIURL);
     setPollutionData(data.list[0].components);
   }, []);
 
-  const {
-    long, lat, country, flag,
-  } = location.state;
+  // const {
+  //   long, lat, country, flag,
+  // } = location.state;
 
-  if (!pollutionData) return <h1>Loading...</h1>;
+  console.log(location);
+
+  // const flag = '';
+  // const lat = '';
+  // const country = '';
+  // const long = '';
+
+  if (!pollutionData) return <h1 data-testid="Loading">Loading...</h1>;
   return (
     <>
       <nav className="country-navbar">
@@ -27,25 +35,27 @@ const CountryElement = () => {
           </div>
         </Link>
         <span>Country&apos;s Details</span>
+        <FiSettings className="settings-icon" />
       </nav>
       <div className="headline country-headline">
         <div>
-          <img className="country-image" src={flag} alt={`${country}'s Flag`} />
+          <img className="country-image" src={location.state.flag} alt={`${location.state.country}'s Flag`} />
           <div className="per-detail">
-            <span className="country-name">{country}</span>
+            <span className="country-name">{location.state.country}</span>
             <span>
               Lat:
               {' '}
-              {lat}
+              {location.state.lat}
             </span>
             <span>
               Long:
               {' '}
-              {long}
+              {location.state.long}
             </span>
           </div>
         </div>
       </div>
+      <div className="total-population country-population">Pollutant Data:</div>
       <div className="gas-details">
         <div className="pollutant-div">
           <span>Carbon Monoxide:</span>
