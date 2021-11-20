@@ -319,4 +319,8 @@ body {
   .pollutant-div {
     padding: 2rem 3rem;
   }
+
+  #search-countries {
+    width: 45%;
+  }
 }
