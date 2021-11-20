@@ -60,7 +60,7 @@ You can learn more about calculation of Air Quality index by clicking this [Link
 
 ## Live Demo Links
 
-🔗 [SpaceX](https://spacex-hub.netlify.app/)
+🔗 [Live Demo Link](https://air-pollution-centre.herokuapp.com/)
 
 ## Getting Started
 

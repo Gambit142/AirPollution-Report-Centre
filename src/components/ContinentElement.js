@@ -1,11 +1,14 @@
 import { useSelector } from 'react-redux';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import logo from '../assets/Africa.png';
 
 const ContinentElement = () => {
+  const [searchCountry, setSearchCountry] = useState('');
   const { continentReducer } = useSelector((state) => state);
   if (!continentReducer) return <h1>Loading</h1>;
+  const filteredCountries = continentReducer.filter((c) => c.country.includes(searchCountry));
   const totalPopulation = !continentReducer ? 0 : continentReducer.reduce((total, item) => ({
     population: total.population + item.population,
   }), { population: 0 });
@@ -30,8 +33,16 @@ const ContinentElement = () => {
         </div>
       </div>
       <div className="total-population">{`Total Population: ${totalPopulation.population.toLocaleString()}`}</div>
+      <input
+        type="text"
+        name="search-countries"
+        id="search-countires"
+        placeholder="Search Country..."
+        value={searchCountry}
+        onChange={(e) => setSearchCountry(e.target.value)}
+      />
       <section className="country-container">
-        {continentReducer.map(({
+        {filteredCountries.map(({
           updated,
           countryInfo: {
             _id: id, flag, lat, long,
