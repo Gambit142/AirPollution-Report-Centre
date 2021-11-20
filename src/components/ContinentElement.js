@@ -36,7 +36,7 @@ const ContinentElement = () => {
       <input
         type="text"
         name="search-countries"
-        id="search-countires"
+        id="search-countries"
         placeholder="Search Country..."
         value={searchCountry}
         onChange={(e) => setSearchCountry(e.target.value)}

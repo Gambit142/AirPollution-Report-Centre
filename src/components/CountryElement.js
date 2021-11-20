@@ -14,17 +14,6 @@ const CountryElement = () => {
     setPollutionData(data.list[0].components);
   }, []);
 
-  // const {
-  //   long, lat, country, flag,
-  // } = location.state;
-
-  console.log(location);
-
-  // const flag = '';
-  // const lat = '';
-  // const country = '';
-  // const long = '';
-
   if (!pollutionData) return <h1 data-testid="Loading">Loading...</h1>;
   return (
     <>

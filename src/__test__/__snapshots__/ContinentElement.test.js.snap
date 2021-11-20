@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Check All tests for CountryElement Component If it renders content on the page 1`] = `
+exports[`Check All tests for CountryElement Component If it creates exact snapsshot of component 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -65,6 +65,13 @@ Object {
       >
         Total Population: 40,135,620
       </div>
+      <input
+        id="search-countries"
+        name="search-countries"
+        placeholder="Search Country..."
+        type="text"
+        value=""
+      />
       <section
         class="country-container"
       >
@@ -166,6 +173,13 @@ Object {
     >
       Total Population: 40,135,620
     </div>
+    <input
+      id="search-countries"
+      name="search-countries"
+      placeholder="Search Country..."
+      type="text"
+      value=""
+    />
     <section
       class="country-container"
     >

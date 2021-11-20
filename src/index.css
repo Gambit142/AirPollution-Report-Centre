@@ -236,6 +236,21 @@ body {
   background-attachment: fixed;
 }
 
+#search-countries {
+  margin: 10px 0 1.8rem 0.5rem;
+  border: 1px solid transparent;
+  background-color: #8fe58f;
+  padding: 0.3rem;
+  font-size: 1.3rem;
+  border-radius: 25px;
+  outline: none;
+  color: #000;
+}
+
+#search-countries::placeholder {
+  color: #fff;
+}
+
 @media screen and (min-width: 768px) {
   .continent-navbar {
     gap: 0;
@@ -305,14 +320,3 @@ body {
     padding: 2rem 3rem;
   }
 }
-
-/* margin-top: 1rem;
-    border: 1px solid transparent;
-    background-color: #8fe58f;
-    padding: 0.3rem;
-    font-size: 1.3rem;
-    margin-bottom: 1.8rem;
-    border-radius: 25px;
-    margin-top: 10px;
-    margin-left: 0.5rem;
-    outline: none; */
