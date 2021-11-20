@@ -4,7 +4,7 @@
   padding: 0;
 }
 
-#root {
+body {
   background-color: #64ae64;
 }
 
@@ -26,7 +26,6 @@
 
 .headline {
   padding: 2rem 0;
-  /* background-color: #a6e35d; */
   background-color: #42b13e;
 }
 
@@ -74,14 +73,26 @@
   color: #fbfb06;
 }
 
+.back-arrow span {
+  font-weight: 800;
+}
+
 .per-detail span {
   font-size: 1.1rem;
   letter-spacing: 0.1rem;
   font-weight: 600;
-} 
+}
 
 .per-detail {
   gap: 0 !important;
+}
+
+.country-navbar span {
+  font-family: 'Lato', sans-serif;
+}
+
+.back-arrow svg {
+  align-self: center;
 }
 
 .african-details span:first-child,
@@ -108,7 +119,7 @@
   font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: 1px;
-  box-shadow: 0 5px 8px rgba(0,0,128,.24);
+  box-shadow: 0 5px 8px rgba(0, 0, 128, 0.24);
 }
 
 .country-population {
@@ -186,10 +197,6 @@
   gap: 0;
 }
 
-.country-navbar span {
-  font-family: 'Lato', sans-serif;
-}
-
 .country-navbar a {
   text-decoration: none;
   color: #000080;
@@ -201,14 +208,6 @@
   gap: 0.3rem;
   font-size: 1.6rem;
   color: #fff;
-}
-
-.back-arrow svg {
-  align-self: center;
-}
-
-.back-arrow span {
-  font-weight: 800;
 }
 
 .pollutant-div {
@@ -237,6 +236,21 @@
   background-attachment: fixed;
 }
 
+#search-countries {
+  margin: 10px 0 1.8rem 0.5rem;
+  border: 1px solid transparent;
+  background-color: #8fe58f;
+  padding: 0.3rem;
+  font-size: 1.3rem;
+  border-radius: 25px;
+  outline: none;
+  color: #000;
+}
+
+#search-countries::placeholder {
+  color: #fff;
+}
+
 @media screen and (min-width: 768px) {
   .continent-navbar {
     gap: 0;
@@ -245,6 +259,7 @@
 
   .headline div {
     justify-content: center;
+    gap: 3rem;
   }
 
   .country-div {
@@ -284,11 +299,7 @@
     font-size: 1.2rem;
   }
 
-  .headline div {
-    gap: 3rem;
-  }
-
-  .headline div .country-image {
+  .headline > div > .country-image {
     width: 8rem;
     height: 8rem;
     border-radius: 50%;
@@ -307,5 +318,9 @@
 
   .pollutant-div {
     padding: 2rem 3rem;
+  }
+
+  #search-countries {
+    width: 45%;
   }
 }

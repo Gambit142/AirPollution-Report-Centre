@@ -14,6 +14,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 > ![screenshot](./src/assets/brief-demo.gif)
 
+## Video Presentation
+🔗 [Video Link](https://www.loom.com/share/fef8525437e747b6a48e5e2d3a972d78)
+
 This **Single Page App**  was built with **React-Redux**. The main page `(Continent Page)` was built using data gotten from this [Covid19 API](https://disease.sh/v3/covid-19/countries). The main page renders the following details about African Countries and Islands in the `ReactDOM`:
 - Total Population of people in Africa
 - The current date
@@ -60,7 +63,7 @@ You can learn more about calculation of Air Quality index by clicking this [Link
 
 ## Live Demo Links
 
-🔗 [SpaceX](https://spacex-hub.netlify.app/)
+🔗 [Live Demo Link](https://air-pollution-centre.herokuapp.com/)
 
 ## Getting Started
 
