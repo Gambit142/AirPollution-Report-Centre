@@ -1,13 +1,311 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root {
+  background-color: #64ae64;
+}
+
+.continent-navbar,
+.country-navbar {
+  display: flex;
+  padding: 1.2rem;
+  gap: 4.5rem;
+  background-color: #089152;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.settings-icon {
+  align-self: center;
+}
+
+.headline {
+  padding: 2rem 0;
+  /* background-color: #a6e35d; */
+  background-color: #42b13e;
+}
+
+.country-headline {
+  padding: 2rem 1rem;
+}
+
+.country-headline div {
+  justify-content: space-around;
+}
+
+.headline div {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.headline div img {
+  width: 12rem;
+  padding-left: 1.25rem;
+}
+
+.headline div .country-image {
+  width: 10rem;
+  border-radius: 20px;
+  padding-left: 0;
+}
+
+.africa {
+  width: 11rem;
+  opacity: 0.6;
+}
+
+.african-details,
+.per-detail {
+  flex-direction: column;
+  margin-right: 1rem;
+  gap: 0.5rem !important;
+  align-self: center;
+}
+
+.african-details span,
+.per-detail span {
+  font-size: 1.5rem;
+  font-family: 'Lato', sans-serif;
+  color: #fbfb06;
+}
+
+.per-detail span {
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+} 
+
+.per-detail {
+  gap: 0 !important;
+}
+
+.african-details span:first-child,
+.per-detail span:first-child {
+  align-self: center;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  font-weight: 800;
+}
+
+.per-detail span:first-child {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-align: start;
+  letter-spacing: 0.1rem;
+  align-self: flex-start;
+}
+
+.total-population {
+  color: #fff;
+  background-color: #089152a8;
+  padding: 1rem;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 8px rgba(0,0,128,.24);
+}
+
+.country-population {
+  font-size: 1.4rem;
+}
+
+.country-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.flag {
+  height: 7rem;
+  width: 8rem;
+  align-self: flex-end;
+  border-radius: 30px;
+}
+
+.country-div {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 1.5rem 1rem 0;
+}
+
+.country-div:nth-child(4n + 2),
+.country-div:nth-child(4n + 3) {
+  background-color: #439c43;
+}
+
+.country-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.country-details div {
+  align-self: flex-end;
+}
+
+.country-name,
+.population {
+  align-self: flex-end;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  letter-spacing: 2px;
+  font-size: 1.25rem;
+  text-align: end;
+}
+
+.country-name {
+  margin-top: 1rem;
+}
+
+.population {
+  font-size: 1rem;
+}
+
+.date {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.7rem;
+  align-self: flex-end;
+  color: #000;
+  text-align: end;
+  margin-bottom: 1rem;
+}
+
+.country-div a {
+  text-decoration: none;
+}
+
+.country-navbar {
+  align-items: center;
+  font-weight: 800;
+  justify-content: space-between;
+  gap: 0;
+}
+
+.country-navbar span {
+  font-family: 'Lato', sans-serif;
+}
+
+.country-navbar a {
+  text-decoration: none;
+  color: #000080;
+}
+
+.back-arrow {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.back-arrow svg {
+  align-self: center;
+}
+
+.back-arrow span {
+  font-weight: 800;
+}
+
+.pollutant-div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2rem 1rem;
+  font-family: 'Gill Sans', sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 700;
+  background-color: #64ac64cc;
+}
+
+.pollutant-div:nth-child(even) {
+  background-color: #439c43c2;
+}
+
+.pollutant-div span:last-child {
+  justify-self: end;
+}
+
+.gas-details {
+  background: url('./assets/pollutants-img.jpg') no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-attachment: fixed;
+}
+
+@media screen and (min-width: 768px) {
+  .continent-navbar {
+    gap: 0;
+    justify-content: space-between;
+  }
+
+  .headline div {
+    justify-content: center;
+  }
+
+  .country-div {
+    padding-left: 1.5rem;
+  }
+
+  .country-div a {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .country-details {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .date {
+    margin-bottom: 0;
+    font-size: 1rem;
+  }
+
+  .flag {
+    height: 8rem;
+    width: 9rem;
+  }
+
+  .country-details div {
+    align-self: center;
+  }
+
+  .country-name {
+    font-size: 2rem;
+  }
+
+  .population {
+    font-size: 1.2rem;
+  }
+
+  .headline div {
+    gap: 3rem;
+  }
+
+  .headline div .country-image {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+  }
+
+  .gas-details {
+    background: url('./assets/pollutant-desktop.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .total-population {
+    padding-left: 3rem;
+  }
+
+  .pollutant-div {
+    padding: 2rem 3rem;
+  }
 }
