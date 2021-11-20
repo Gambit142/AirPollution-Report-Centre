@@ -1,4 +1,4 @@
-import fetchContinentApi from '../../components/fetchApi';
+import { fetchContinentApi } from '../../components/fetchApi';
 
 export const FETCH_CONTINENT = 'airpollution/continent/FETCH_CONTINENT';
 const initialState = [];

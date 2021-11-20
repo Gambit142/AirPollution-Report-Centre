@@ -1,18 +1,16 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
-import continentReducer, { fetchContinent } from './continent/Continent';
+import continentReducer from './continent/Continent';
 
 const reducer = combineReducers({
   continentReducer,
 });
-const middleware = [logger, thunk];
+const middleware = [thunk, logger];
 
 const store = createStore(
   reducer,
   applyMiddleware(...middleware),
 );
-
-store.dispatch(fetchContinent());
 
 export default store;
