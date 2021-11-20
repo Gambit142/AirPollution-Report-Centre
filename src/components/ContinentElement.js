@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { FiSettings } from 'react-icons/fi';
 import logo from '../assets/Africa.png';
 
 const ContinentElement = () => {
@@ -14,12 +15,13 @@ const ContinentElement = () => {
       <nav className="continent-navbar">
         <span>2021</span>
         <span>Continent</span>
+        <FiSettings className="settings-icon" />
       </nav>
       <div className="headline">
         <div>
           <img className="africa" src={logo} alt="Map of Africa" />
           <div className="african-details">
-            <span>Africa</span>
+            <span data-testid="map-item-continent">Africa</span>
             <span>
               {`${continentReducer.length}
                Countries`}
@@ -47,8 +49,10 @@ const ContinentElement = () => {
               <div className="date">{(new Date(updated)).toDateString()}</div>
               <div className="country-details">
                 <img className="flag" src={flag} alt={`${country}'s Flag`} />
-                <h2 className="country-name">{country}</h2>
-                <h2 className="population">{population.toLocaleString()}</h2>
+                <div>
+                  <h2 className="country-name">{country}</h2>
+                  <h2 className="population">{population.toLocaleString()}</h2>
+                </div>
               </div>
             </Link>
           </div>
