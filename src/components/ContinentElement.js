@@ -3,15 +3,19 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import logo from '../assets/Africa.png';
+import Pagination from './Pagination';
 
 const ContinentElement = () => {
   const [searchCountry, setSearchCountry] = useState('');
+  const [page, setPage] = useState(0);
   const { continentReducer } = useSelector((state) => state);
   if (!continentReducer) return <h1>Loading</h1>;
   const filteredCountries = continentReducer.filter((c) => c.country.includes(searchCountry));
   const totalPopulation = !continentReducer ? 0 : continentReducer.reduce((total, item) => ({
     population: total.population + item.population,
   }), { population: 0 });
+  const perPage = 10;
+  const tenPages = filteredCountries.slice(page * perPage, (page * perPage) + perPage);
 
   return (
     <>
@@ -37,12 +41,12 @@ const ContinentElement = () => {
         type="text"
         name="search-countries"
         id="search-countries"
-        placeholder="Search Country..."
+        placeholder="Search Country"
         value={searchCountry}
         onChange={(e) => setSearchCountry(e.target.value)}
       />
       <section className="country-container">
-        {filteredCountries.map(({
+        {tenPages.map(({
           updated,
           countryInfo: {
             _id: id, flag, lat, long,
@@ -69,6 +73,11 @@ const ContinentElement = () => {
           </div>
         ))}
       </section>
+      <Pagination
+        totalPosts={continentReducer.length}
+        numberPerPage={perPage}
+        onPageChange={setPage}
+      />
     </>
   );
 };
