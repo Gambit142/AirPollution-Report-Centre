@@ -2,7 +2,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and Redux.
 
 
-> The Air Pollution Report Centre project is a web application that provides detailed metrices of several air pollutants in the athmosphere for a particular country in Africa.
+> The Air Pollution Report Centre project is a web application that provides detailed metrices of several air pollutants in the atmosphere for a particular country in Africa.
 
 
 ## Screenshot
@@ -23,7 +23,7 @@ This **Single Page App**  was built with **React-Redux**. The main page `(Contin
 - Each country's flag and 
 - Each Country's Population
 
-Each country's card has links to its particular page that displays the country's air pollution data for emmisions of air pollutants into the athmosphere.
+Each country's card has links to its particular page that displays the country's air pollution data for emmisions of air pollutants into the atmosphere.
 
 The project uses _React's `useLocation()`_ to link to each country's page and modify the _`URL Path`_ for each country
 
