@@ -239,16 +239,41 @@ body {
 #search-countries {
   margin: 10px 0 1.8rem 0.5rem;
   border: 1px solid transparent;
-  background-color: #8fe58f;
-  padding: 0.3rem;
+  background-color: #224a22;
+  padding: 0.5rem;
   font-size: 1.3rem;
   border-radius: 25px;
   outline: none;
-  color: #000;
+  color: #fff;
+  text-align: center;
 }
 
 #search-countries::placeholder {
   color: #fff;
+}
+
+.buttons-div {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.page-button {
+  margin: 0.8rem 0;
+  padding: 0.8rem;
+  font-size: 0.95rem;
+  font-family: 'Lato', sans-serif;
+  background-color: #224a22;
+  color: #fff;
+  font-weight: 800;
+  border: 1px solid transparent;
+  border-radius: 10px;
+}
+
+.selected {
+  background-color: #a5a547;
+  color: #000;
+  border-color: #fff;
 }
 
 @media screen and (min-width: 768px) {
