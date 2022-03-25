@@ -1,19 +1,26 @@
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FiSettings } from 'react-icons/fi';
-import logo from '../assets/Africa.png';
+import { RiDeleteBack2Fill } from 'react-icons/ri';
+import { Link, useParams } from 'react-router-dom';
 import Pagination from './Pagination';
 
 const ContinentElement = () => {
   const [searchCountry, setSearchCountry] = useState('');
   const [page, setPage] = useState(0);
-  const { continentReducer } = useSelector((state) => state);
-  if (!continentReducer) return <h1>Loading</h1>;
-  const filteredCountries = continentReducer.filter((c) => c.country.includes(searchCountry));
-  const totalPopulation = !continentReducer ? 0 : continentReducer.reduce((total, item) => ({
+  const { continentReducer, worldReducer } = useSelector((state) => state);
+  const { continentName } = useParams();
+
+  const { image: logo, name } = worldReducer.find((item) => item.name === continentName);
+
+  const continentsArray = continentReducer.filter((item) => item.continent === continentName);
+
+  if (!continentsArray) return <h1>Loading</h1>;
+  const filteredCountries = continentsArray.filter((c) => c.country.includes(searchCountry));
+
+  const totalPopulation = !continentsArray ? 0 : continentsArray.reduce((total, item) => ({
     population: total.population + item.population,
   }), { population: 0 });
+
   const perPage = 10;
   const tenPages = filteredCountries.slice(page * perPage, (page * perPage) + perPage);
 
@@ -22,15 +29,19 @@ const ContinentElement = () => {
       <nav className="continent-navbar">
         <span>2021</span>
         <span>Continent</span>
-        <FiSettings className="settings-icon" />
+        <Link to="/">
+          <div className="back-arrow">
+            <RiDeleteBack2Fill />
+          </div>
+        </Link>
       </nav>
       <div className="headline">
         <div>
-          <img className="africa" src={logo} alt="Map of Africa" />
+          <img className={`africa ${name.toLowerCase()}`} src={logo} alt={name} />
           <div className="african-details">
-            <span data-testid="map-item-continent">Africa</span>
+            <span className={`${name}-title`} data-testid="map-item-continent">{name}</span>
             <span>
-              {`${continentReducer.length}
+              {`${continentsArray.length}
                Countries`}
             </span>
           </div>
@@ -48,6 +59,7 @@ const ContinentElement = () => {
       <section className="country-container">
         {tenPages.map(({
           updated,
+          continent,
           countryInfo: {
             _id: id, flag, lat, long,
           }, country, population,
@@ -57,7 +69,7 @@ const ContinentElement = () => {
               to={{
                 pathname: `/country/${country}`,
                 state: {
-                  long, lat, country, flag,
+                  long, lat, country, flag, continent,
                 },
               }}
             >
@@ -73,11 +85,13 @@ const ContinentElement = () => {
           </div>
         ))}
       </section>
+      {tenPages.length !== 0 && (
       <Pagination
-        totalPosts={continentReducer.length}
+        totalPosts={continentsArray.length}
         numberPerPage={perPage}
         onPageChange={setPage}
       />
+      )}
     </>
   );
 };
