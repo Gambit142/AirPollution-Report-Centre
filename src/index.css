@@ -67,7 +67,7 @@ body {
 }
 
 .north {
-  height: 10rem
+  height: 10rem;
 }
 
 .african-details,
@@ -158,7 +158,8 @@ body {
   font-size: 1.4rem;
 }
 
-.country-container, .world-container {
+.country-container,
+.world-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -190,7 +191,8 @@ body {
   width: 100%;
 }
 
-.Asia, .Europe {
+.Asia,
+.Europe {
   margin-top: 2rem;
   height: 8rem;
 }
@@ -203,7 +205,8 @@ body {
   height: 8rem;
 }
 
-.country-div, .world-div {
+.country-div,
+.world-div {
   display: flex;
   justify-content: flex-end;
   padding: 1rem 1.5rem 1rem 0;
@@ -395,7 +398,7 @@ body {
   .flag {
     height: 8rem;
     width: 9rem;
-  };
+  }
 
   .map {
     height: 100%;
