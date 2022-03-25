@@ -9,7 +9,8 @@ body {
 }
 
 .continent-navbar,
-.country-navbar {
+.country-navbar,
+.world-navbar {
   display: flex;
   padding: 1.2rem;
   gap: 4.5rem;
@@ -18,6 +19,13 @@ body {
   font-size: 1.5rem;
   color: #fff;
   font-weight: 600;
+}
+
+.world-navbar {
+  display: block;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  padding: 1rem;
 }
 
 .settings-icon {
@@ -56,6 +64,10 @@ body {
 .africa {
   width: 11rem;
   opacity: 0.6;
+}
+
+.north {
+  height: 10rem
 }
 
 .african-details,
@@ -103,12 +115,32 @@ body {
   font-weight: 800;
 }
 
+.Australia-Oceania-title {
+  font-size: 1.5rem !important;
+}
+
+.America-title {
+  height: inherit !important;
+}
+
 .per-detail span:first-child {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   text-align: start;
   letter-spacing: 0.1rem;
   align-self: flex-start;
+}
+
+.african-details .click {
+  font-size: 1.3rem !important;
+  font-weight: 700;
+  color: #fff;
+}
+
+.african-details .continent {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
 }
 
 .total-population {
@@ -126,9 +158,13 @@ body {
   font-size: 1.4rem;
 }
 
-.country-container {
+.country-container, .world-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+.world-container {
+  height: 105vh;
 }
 
 .flag {
@@ -138,14 +174,51 @@ body {
   border-radius: 30px;
 }
 
-.country-div {
+.map-container {
+  width: 10rem;
+  border-radius: 30px;
+}
+
+.map-name {
+  font-size: 1.2rem;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+}
+
+.map {
+  height: 100%;
+  width: 100%;
+}
+
+.Asia, .Europe {
+  margin-top: 2rem;
+  height: 8rem;
+}
+
+.Asia {
+  margin-top: 2.5rem;
+}
+
+.North {
+  height: 8rem;
+}
+
+.country-div, .world-div {
   display: flex;
   justify-content: flex-end;
   padding: 1rem 1.5rem 1rem 0;
 }
 
+.world-div {
+  padding: 1rem;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 .country-div:nth-child(4n + 2),
-.country-div:nth-child(4n + 3) {
+.country-div:nth-child(4n + 3),
+.world-div:nth-child(4n + 2),
+.world-div:nth-child(4n + 3) {
   background-color: #439c43;
 }
 
@@ -171,6 +244,7 @@ body {
 
 .country-name {
   margin-top: 1rem;
+  text-decoration: underline;
 }
 
 .population {
@@ -186,8 +260,17 @@ body {
   margin-bottom: 1rem;
 }
 
-.country-div a {
+.country-div a,
+.world-div a {
   text-decoration: none;
+}
+
+.world-div a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2rem;
 }
 
 .country-navbar {
@@ -287,11 +370,13 @@ body {
     gap: 3rem;
   }
 
-  .country-div {
+  .country-div,
+  .world-div {
     padding-left: 1.5rem;
   }
 
-  .country-div a {
+  .country-div a,
+  .world-div a {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -310,6 +395,11 @@ body {
   .flag {
     height: 8rem;
     width: 9rem;
+  };
+
+  .map {
+    height: 100%;
+    width: 100%;
   }
 
   .country-details div {
