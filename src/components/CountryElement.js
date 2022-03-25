@@ -18,7 +18,7 @@ const CountryElement = () => {
   return (
     <>
       <nav className="country-navbar">
-        <Link to="/">
+        <Link to={`/continent/${location.state.continent}`}>
           <div className="back-arrow">
             <RiDeleteBack2Fill />
           </div>
