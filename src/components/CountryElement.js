@@ -8,7 +8,7 @@ const CountryElement = () => {
   const [pollutionData, setPollutionData] = useState(null);
   const location = useLocation();
   const APIKEY = '8fbadde895ad48d207382a06c22ef535';
-  const APIURL = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${location.state?.lat}&lon=${location.state?.long}&appid=${APIKEY}`;
+  const APIURL = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/air_pollution?lat=${location.state?.lat}&lon=${location.state?.long}&appid=${APIKEY}`;
   useEffect(async () => {
     const data = await fetchPollutantApi(APIURL);
     setPollutionData(data.list[0].components);
